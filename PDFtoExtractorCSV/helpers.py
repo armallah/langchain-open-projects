@@ -42,10 +42,10 @@ def extracted_data(pages_data):
     formatted_prompt = prompt_template.format(pages=pages_data)
 
     stream = client.chat.completions.create(
-        model="gpt-4", 
+        model="chatgpt-4o-latest", 
         messages=[{"role": "user", "content": formatted_prompt}],
         stream=True,
-        max_tokens=4000  # Adjust as needed
+        max_tokens=16384  # Adjust as needed
     )
 
     full_response = ""
